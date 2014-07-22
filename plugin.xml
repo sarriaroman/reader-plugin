@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="com.reports.cordova.plugins"
+      version="0.0.1">
+    <name>Reader</name>
+    <description>PhoneGap Magnetic Card Reader Plugin</description>
+    <license>MIT</license>
+    <keywords>phonegap,reader,magnetic,card</keywords>
+ 
+ 
+    <js-module src="www/reader.js" name="Reader">
+        <clobbers target="window.Reader" />
+    </js-module>
+ 
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Reader">
+                <param name="android-package" value="com.reports.cordova.plugins.Reader"/>
+            </feature>
+        </config-file>
+ 
+        <source-file src="src/Reader.java" target-dir="com/reports/cordova/plugins" />      
+     </platform>          
+</plugin>
