@@ -13,13 +13,7 @@ public class Reader extends CordovaPlugin {
 		try {
 		    if ("test".equals(action)) { 
 		             JSONObject arg_object = args.getJSONObject(0);
-		             
-		       cordova.getThreadPool().execute(new Runnable() {
-                   public void run() {
-                       // Main Code goes here
-                       callbackContext.success(arg_object);
-                   }
-               });
+		       echo(arg_object, callbackContext);
 		       return true;
 		    }
 		    callbackContext.error("Invalid action");
@@ -30,7 +24,19 @@ public class Reader extends CordovaPlugin {
 		    return false;
 		} 
 	}
+
+	public void echo(final JSONObject obj, final CallbackContext callbackContext) {
+	    cordova.getThreadPool().execute(new Runnable() {
+                           public void run() {
+                               // Main Code goes here
+                               callbackContext.success(obj);
+                           }
+                       });
+	}
 }
+
+
+
 /*
 cordova.getThreadPool().execute(new Runnable() {
     public void run() {
