@@ -14,7 +14,12 @@ public class Reader extends CordovaPlugin {
 		    if ("test".equals(action)) { 
 		             JSONObject arg_object = args.getJSONObject(0);
 		             
-		             
+		       cordova.getThreadPool().execute(new Runnable() {
+                   public void run() {
+                       // Main Code goes here
+                       callbackContext.success(arg_object);
+                   }
+               });
 		       return true;
 		    }
 		    callbackContext.error("Invalid action");
@@ -26,3 +31,17 @@ public class Reader extends CordovaPlugin {
 		} 
 	}
 }
+/*
+cordova.getThreadPool().execute(new Runnable() {
+    public void run() {
+        // Main Code goes here
+        callbackContext.success();
+    }
+});
+cordova.getActivity().runOnUiThread(new Runnable() {
+                    public void run() {
+                        // Main Code goes here
+                        callbackContext.success();
+                    }
+                }
+*/

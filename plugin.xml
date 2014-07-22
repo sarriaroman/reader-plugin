@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
  
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-           id="com.reports.cordova.plugins"
+           id="com.reports.cordova.plugins.reader"
       version="0.0.2">
     <name>Reader</name>
     <description>PhoneGap Magnetic Card Reader Plugin</description>
