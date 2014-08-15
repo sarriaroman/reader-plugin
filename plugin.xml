@@ -20,7 +20,14 @@
                 <param name="android-package" value="com.reports.cordova.plugins.Reader"/>
             </feature>
         </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+            <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+            <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+        </config-file>
  
         <source-file src="src/Reader.java" target-dir="src/com/reports/cordova/plugins" />
+        <source-file src="platforms/android/libs/iMagPayV3.1.jar" target-dir="libs" />
      </platform>          
 </plugin>

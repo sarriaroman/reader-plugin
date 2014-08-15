@@ -8,10 +8,8 @@ cordova.define("reports/cordova/plugins/reader", function(require, exports, modu
             successCallback, // success callback function
             errorCallback, // error callback function
             'Reader', // mapped to our native Java class called "Calendar"
-            'test', // with this action name
-            [{                  // and this array of custom arguments to create our entry
-                "title": str
-            }]
+            'init', // with this action name
+            []
         );
     };
 
